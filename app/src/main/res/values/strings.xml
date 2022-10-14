@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">TestAdminka</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="client_id">594848847687-4ih0nvooqg4rbpcte1gmfv10rb25uq6h.apps.googleusercontent.com</string>
+</resources>
