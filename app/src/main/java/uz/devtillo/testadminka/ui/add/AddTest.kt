@@ -48,8 +48,7 @@ class AddTest : Fragment() {
                     testName = name.name!!,
                     subId = subid,
                     count = nomi,
-                    result = level
-                )
+                    level = level)
 
                 reference
                     .child(name.name!!)

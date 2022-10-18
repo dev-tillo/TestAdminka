@@ -22,7 +22,7 @@ class SpinnerAdapterNameTest(var list: List<Test>) : BaseAdapter() {
             ItemSpinnerBinding.bind(convertView)
         }
 
-        binding.txt.text = list[position].subId
+        binding.txt.text = list[position].level
 
         return binding.root
     }

@@ -1,6 +1,8 @@
 package uz.devtillo.testadminka.ui.add
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -92,7 +94,7 @@ class AddQuestion : Fragment(), CoroutineScope {
                 position: Int,
                 id: Long
             ) {
-                selectedTestValue = listTest[position].testName
+                selectedTestValue = listTest[position].level
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -103,18 +105,18 @@ class AddQuestion : Fragment(), CoroutineScope {
         binding.save.setOnClickListener {
             try {
                 val question_tv = binding.question.text.toString()
-                val answer = binding.answer.text.toString()
-                val answer1 = binding.answer1.text.toString()
-                val answer2 = binding.answer2.text.toString()
+                val answer1 = binding.answer.text.toString()
+                val answer2 = binding.answer1.text.toString()
+                val answer3 = binding.answer2.text.toString()
                 val correct = binding.correct.text.toString()
 
                 question =
                     Question(
                         id = Random.nextInt(),
                         question = question_tv,
-                        answer = answer,
                         answer1 = answer1,
                         answer2 = answer2,
+                        answer3 = answer3,
                         correct = correct
                     )
                 reference
@@ -122,6 +124,7 @@ class AddQuestion : Fragment(), CoroutineScope {
                     .child("list")
                     .child(selectedTestValue)
                     .child("quizList")
+                    .child(question_tv)
                     .setValue(question).addOnCompleteListener {
                         Toast.makeText(requireContext(), "Successfully", Toast.LENGTH_SHORT)
                             .show()
@@ -136,29 +139,25 @@ class AddQuestion : Fragment(), CoroutineScope {
     }
 
     private fun loadTest(name: String) {
-        try {
-            reference.child(name)
-                .child("list")
-                .addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        listTest.clear()
-                        val children = snapshot.children
-                        for (child in children) {
-                            val value = child.getValue(Test::class.java)
-                            if (value != null) {
-                                listTest.add(value)
-                                binding.questionName.adapter = spinnerAdapter1
-                            }
+        reference.child(name)
+            .child("list")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    listTest.clear()
+                    val children = snapshot.children
+                    for (child in children) {
+                        val value = child.getValue(Test::class.java)
+                        if (value != null) {
+                            listTest.add(value)
+                            binding.questionName.adapter = spinnerAdapter1
                         }
                     }
+                }
 
-                    override fun onCancelled(error: DatabaseError) {
+                override fun onCancelled(error: DatabaseError) {
 
-                    }
-                })
-        } catch (e: ArrayIndexOutOfBoundsException) {
-            e.printStackTrace()
-        }
+                }
+            })
     }
 
     private fun loadSubject() {

@@ -8,5 +8,5 @@ data class Subject(
     var name: String? = null,
     var description: String? = null,
     var count: String? = null,
-    var author: String? = null
+    var author: String? = null,
 ) : Serializable

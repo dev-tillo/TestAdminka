@@ -7,7 +7,6 @@ data class Test(
     var id: Int = 0,
     var testName: String = "",
     var subId: String = "",
-    var level: String = "",
     var count: String = "",
-    var result: String = ""
+    var level: String = "",
 ) : Serializable

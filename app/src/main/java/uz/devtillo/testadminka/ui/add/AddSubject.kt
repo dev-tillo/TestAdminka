@@ -35,10 +35,9 @@ class AddSubject : Fragment() {
             val name = binding.name.text.toString()
             val count = binding.soniEt.text.toString()
             val description = binding.description.text.toString()
-            val image = binding.image.text.toString()
             val random = Random
 
-            if (author.isNotEmpty() && name.isNotEmpty() && count.isNotEmpty() && description.isNotEmpty() && image.isNotEmpty()) {
+            if (author.isNotEmpty() && name.isNotEmpty() && count.isNotEmpty() && description.isNotEmpty()) {
                 subject =
                     Subject(
                         random.nextInt(),
