@@ -19,46 +19,24 @@
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/addSubject"
+                android:id="@+id/addSahoba"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="AddSubject"
+                android:text="AddSahoba"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/addTestItem"
+                android:id="@+id/addWhatDid"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="AddTest"
-                android:textColor="@color/white"
-                android:textSize="12dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/addQuestion"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="AddQuestion"
-                android:textColor="@color/white"
-                android:textSize="12dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/testtest"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="TEST_TESTS"
+                android:text="Add what did"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
 

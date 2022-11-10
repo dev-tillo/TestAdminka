@@ -21,17 +21,11 @@ class Home : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         with(binding) {
-            addQuestion.setOnClickListener {
-                findNavController().navigate(R.id.addQuestion2)
-            }
-            addSubject.setOnClickListener {
+            addSahoba.setOnClickListener {
                 findNavController().navigate(R.id.addSubject2)
             }
-            addTestItem.setOnClickListener {
+            addWhatDid.setOnClickListener {
                 findNavController().navigate(R.id.addTest)
-            }
-            testtest.setOnClickListener {
-                findNavController().navigate(R.id.testTests)
             }
         }
         return binding.root

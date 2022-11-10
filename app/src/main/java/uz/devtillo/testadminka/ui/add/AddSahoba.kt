@@ -9,17 +9,16 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import uz.devtillo.testadminka.R
 import uz.devtillo.testadminka.databinding.FragmentAddSubjectBinding
-import uz.devtillo.testadminka.model.Subject
+import uz.devtillo.testadminka.model.Sahoba
 import kotlin.random.Random
 
-class AddSubject : Fragment() {
+class AddSahoba : Fragment() {
 
     private lateinit var binding: FragmentAddSubjectBinding
     private lateinit var firebacedatabase: FirebaseDatabase
     private lateinit var reference: DatabaseReference
-    private lateinit var subject: Subject
+    private lateinit var subject: Sahoba
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,20 +30,16 @@ class AddSubject : Fragment() {
         reference = firebacedatabase.getReference("testapp")
 
         binding.save.setOnClickListener {
-            val author = binding.author.text.toString()
             val name = binding.name.text.toString()
-            val count = binding.soniEt.text.toString()
-            val description = binding.description.text.toString()
+            val born = binding.born.text.toString()
             val random = Random
 
-            if (author.isNotEmpty() && name.isNotEmpty() && count.isNotEmpty() && description.isNotEmpty()) {
+            if (name.isNotEmpty() && born.isNotEmpty()) {
                 subject =
-                    Subject(
+                    Sahoba(
                         random.nextInt(),
                         name = name,
-                        author = author,
-                        count = count,
-                        description = description
+                        born = born
                     )
                 reference.child(name).setValue(subject).addOnCompleteListener {
                     if (it.isSuccessful) {

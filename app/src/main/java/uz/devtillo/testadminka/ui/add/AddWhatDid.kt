@@ -1,28 +1,28 @@
 package uz.devtillo.testadminka.ui.add
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SpinnerAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.*
 import uz.devtillo.testadminka.databinding.FragmentAddTestBinding
-import uz.devtillo.testadminka.model.Subject
-import uz.devtillo.testadminka.model.test.Test
+import uz.devtillo.testadminka.model.Sahoba
+import uz.devtillo.testadminka.model.test.SahobaDid
 import uz.devtillo.testadminka.ui.adapter.spinner.Spinner_Adapter_Name
 import kotlin.random.Random
 
-class AddTest : Fragment() {
+class AddWhatDid : Fragment() {
 
     private lateinit var binding: FragmentAddTestBinding
     private lateinit var firebacedatabase: FirebaseDatabase
     private lateinit var reference: DatabaseReference
-    private lateinit var test: Test
+    private lateinit var test: SahobaDid
     private lateinit var spinnerAdapter: SpinnerAdapter
-    private lateinit var list: ArrayList<Subject>
+    private lateinit var list: ArrayList<Sahoba>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,22 +38,23 @@ class AddTest : Fragment() {
 
         binding.save.setOnClickListener {
             val name = list[binding.name.selectedItemPosition]
-            val nomi = binding.nomiTest.text.toString()
-            val level = binding.level.text.toString()
-            val subid = binding.subjectid.text.toString()
+            val whatDid = binding.whatDid.text.toString()
+            val author = binding.author.text.toString()
+            val description = binding.description.text.toString()
 
-            if (name.name?.isNotEmpty()!! && nomi.isNotEmpty() && level.isNotEmpty() && subid.isNotEmpty()) {
-                test = Test(
+            if (name.name?.isNotEmpty()!! && whatDid.isNotEmpty() && author.isNotEmpty() && description.isNotEmpty()) {
+                test = SahobaDid(
                     id = Random.nextInt(),
-                    testName = name.name!!,
-                    subId = subid,
-                    count = nomi,
-                    level = level)
+                    what_did_he = whatDid,
+                    author = author,
+                    description = description
+                )
+
 
                 reference
                     .child(name.name!!)
                     .child("list")
-                    .child(level)
+                    .child(whatDid)
                     .setValue(test).addOnCompleteListener {
                         Toast.makeText(requireContext(), "Successfully", Toast.LENGTH_SHORT).show()
                         findNavController().popBackStack()
@@ -72,7 +73,7 @@ class AddTest : Fragment() {
                 list.clear()
                 val children = snapshot.children
                 for (child in children) {
-                    val value = child.getValue(Subject::class.java)
+                    val value = child.getValue(Sahoba::class.java)
                     if (value != null) {
                         list.add(value)
                         binding.name.adapter = spinnerAdapter

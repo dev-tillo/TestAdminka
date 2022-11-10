@@ -5,13 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import uz.devtillo.testadminka.databinding.ItemSpinnerBinding
-import uz.devtillo.testadminka.model.Subject
+import uz.devtillo.testadminka.model.Sahoba
 
-class Spinner_Adapter_Name(var list: List<Subject>) : BaseAdapter() {
+class Spinner_Adapter_Name(var list: List<Sahoba>) : BaseAdapter() {
 
     override fun getCount(): Int = list.size
 
-    override fun getItem(position: Int): Subject = list[position]
+    override fun getItem(position: Int): Sahoba = list[position]
 
     override fun getItemId(position: Int): Long = position.toLong()
 

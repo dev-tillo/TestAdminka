@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.add.AddSubject">
+    tools:context=".ui.add.AddSahoba">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:text="Darslik nomini qo`shish"
+                android:text="Sahoba ismini qo`shish"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:text="Nomi"
+                android:text="Ismi"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
 
@@ -47,7 +47,7 @@
                     android:layout_height="55dp"
                     android:layout_marginHorizontal="10dp"
                     android:background="@drawable/corner"
-                    android:hint="Darslik Nomi"
+                    android:hint="Ismi"
                     android:textColorHint="#57000000"
                     app:boxBackgroundColor="#FFF"
                     app:boxStrokeColor="#FFF"
@@ -80,102 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Author"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="5dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/line3"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/corner"
-                    android:hint="Name Author"
-                    android:textColorHint="#57000000"
-                    app:boxBackgroundColor="#FFF"
-                    app:boxStrokeColor="#FFF"
-                    app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp"
-                    app:hintTextColor="#57000000"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/author"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:background="@android:color/transparent"
-                        android:maxLines="1"
-                        android:paddingHorizontal="10sp"
-                        android:textColor="@color/black"
-                        android:textColorHint="#57000000"
-                        android:textSize="18dp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Soni"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="5dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/line4"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/corner"
-                    android:hint="Test soni"
-                    android:textColorHint="#57000000"
-                    app:boxBackgroundColor="#FFF"
-                    app:boxStrokeColor="#FFF"
-                    app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp"
-                    app:hintTextColor="#57000000"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/soni_et"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:background="@android:color/transparent"
-                        android:maxLines="1"
-                        android:paddingHorizontal="10sp"
-                        android:textColor="@color/black"
-                        android:textColorHint="#57000000"
-                        android:textSize="18dp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Description"
+                android:text="Qacon tugilgan vafot etgan"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
 
@@ -190,7 +95,7 @@
                     android:layout_height="55dp"
                     android:layout_marginHorizontal="10dp"
                     android:background="@drawable/corner"
-                    android:hint="Description"
+                    android:hint="Qachon tugilgan vafot etgan"
                     android:textColorHint="#57000000"
                     app:boxBackgroundColor="#FFF"
                     app:boxStrokeColor="#FFF"
@@ -202,7 +107,7 @@
                     app:layout_constraintTop_toBottomOf="@id/image">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/description"
+                        android:id="@+id/born"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"

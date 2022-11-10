@@ -11,33 +11,13 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/addQuestion2"
-        android:name="uz.devtillo.testadminka.ui.add.AddQuestion"
-        android:label="fragment_add_question"
-        tools:layout="@layout/fragment_add_question" />
-    <fragment
         android:id="@+id/addSubject2"
-        android:name="uz.devtillo.testadminka.ui.add.AddSubject"
+        android:name="uz.devtillo.testadminka.ui.add.AddSahoba"
         android:label="fragment_add_subject"
         tools:layout="@layout/fragment_add_subject" />
     <fragment
         android:id="@+id/addTest"
-        android:name="uz.devtillo.testadminka.ui.add.AddTest"
+        android:name="uz.devtillo.testadminka.ui.add.AddWhatDid"
         android:label="fragment_add_test"
         tools:layout="@layout/fragment_add_test" />
-    <fragment
-        android:id="@+id/testTests"
-        android:name="uz.devtillo.testadminka.ui.adapter.ui.Subjects"
-        android:label="fragment_test_tests"
-        tools:layout="@layout/fragment_subjects" />
-    <fragment
-        android:id="@+id/tests_fragment"
-        android:name="uz.devtillo.testadminka.ui.adapter.ui.TestsFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_tests" />
-    <fragment
-        android:id="@+id/questionUi"
-        android:name="uz.devtillo.testadminka.ui.adapter.ui.QuestionUi"
-        android:label="fragment_question_ui"
-        tools:layout="@layout/fragment_question_ui" />
 </navigation>
